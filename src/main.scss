@@ -1,75 +1,51 @@
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
 .cor-viz {
-  font-size: 14px;
-  margin-top: 10px;
-  position: relative;
 
-  .axis, .label {
+  &__section {
+    // wrapper for inside <figure> and <figcaption> to apply
+    // margin for viz container and infobox/legend
+    padding-top: 10px;
 
-    font-weight: normal;
-    font-size: 11px;
-
-  }
-
-  .figure {
-
-    &__credits {
-
-      margin-top: 14px;
-      color: #9c9c9c;
-      font-size: 14px;
-      line-height: 1.4;
-
-      &>p:first-of-type:before {
-        // remove icon
-        content: '';
-        padding: 0;
-      }
-
+    @media (min-width: $screen-sm) {
+      padding-top: 20px;
     }
-
   }
-
 
   &__svg {
     // the main chart/map styling happens here.
 
-    path.map__item {
+    .axis, .label {
+      font-weight: normal;
+      font-size: 11px;
+    }
 
+    path.map__item {
       stroke: #fff;
       stroke-width: 1;
 
       &.-hilight {
-
         stroke: gray;
         stroke-width: 1;
-
       }
-
     }
 
     circle, rect {
-
       fill-opacity: .8;
       stroke-width: 1;
       stroke-opacity: 1;
       stroke: gray;
 
       &.-hilight {
-
         fill-opacity: 1;
         stroke: #1a1a1a;
         stroke-width: 2;
-
       }
-
     }
 
   }
-
-  &__figcaption-wrapper {
-    top: 90px;
-  }
-
 
   &__infobox {
 
@@ -84,19 +60,6 @@
     dd {
       font-weight: normal;
       line-height: 1em;
-    }
-  }
-
-  &__credits {
-    position: relative;
-    top: -30px;
-    font-size: 15px;
-    clear: left;
-
-    a {
-      border: none;
-      text-decoration: underline;
-      color: inherit;
     }
   }
 
@@ -183,4 +146,23 @@
   }
 }
 
+}
+
+.figure__credits {
+  margin-top: 14px;
+  color: #9c9c9c;
+  font-size: 14px;
+  line-height: 1.4;
+
+  a {
+    border: none;
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  &>p:first-of-type:before {
+    // remove icon
+    content: '';
+    padding: 0;
+  }
 }
