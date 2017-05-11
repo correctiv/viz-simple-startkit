@@ -4,8 +4,8 @@
   "description": "Startkit for developing simple viz for correctiv, based on d3-playbooks",
   "main": "./src/main.js",
   "scripts": {
-    "build-css": "node-sass --output-style compressed ./src/main.scss ./style.min.css",
-    "build-js": "babel ./src/main.js | uglifyjs -c -m > ./viz.min.js",
+    "build-css": "node-sass --output-style compressed ./src/style.scss ./style.min.css",
+    "build-js": "babel ./src/viz.js | uglifyjs -c -m > ./viz.min.js",
     "build": "npm run build-css && npm run build-js",
     "dev": "nodemon -e scss,js --watch ./src/ -x \"npm run build\""
   },
